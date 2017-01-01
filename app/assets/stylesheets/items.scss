@@ -1,0 +1,81 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#toolbar {
+  margin: 35px 0 25px 0;
+  .btn:first-child {
+    margin-right: 40px;
+  }
+}
+
+.highlight {
+  color: red;
+  text-shadow: 0 0 1px red;
+}
+
+.tree, .tree ul {
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.tree {
+  &:before, ul:before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    top: -0.25em;
+    bottom: 0;
+    left: 0;
+    border-left: 0.25em solid #ddd;
+  }
+  li {
+    padding-left: 2em;
+    line-height: 2em;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      width: 1.375em;
+      height: 0;
+      border-top: 0.25em solid #ddd;
+      margin-top: -0.125em;
+      position: absolute;
+      top: 1em;
+      left: 0;
+    }
+    &:last-child:before {
+      background: white;
+      height: auto;
+      top: 1em;
+      bottom:0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .toggle-icon {
+      margin: 0 0.7em 0 -0.8em;
+      padding: 0.2em;
+      border: 0.25em solid #ddd;
+      border-radius: 0.5em;
+      color: #999;
+    }
+    &.parent > span {
+      > .toggle-icon, > .name {
+        cursor: pointer;
+      }
+    }
+    .actions {
+      margin-left: 0.7em;
+      a {
+        color: #888;
+        &:hover {
+          color: inherit;
+        }
+      }
+    }    
+  }
+}

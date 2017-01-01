@@ -1,0 +1,10 @@
+%li{ id: "item_#{item.id}", class: ('parent' if item.has_children?) }
+  %span
+    - if item.has_children?
+      %span.toggle-icon.glyphicon.glyphicon-minus
+    %span.name
+      = item.name
+    = render 'items/item_actions', item: item
+  - if item.has_children?
+    %ul
+      = render partial: 'item', collection: item.children

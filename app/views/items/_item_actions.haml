@@ -1,0 +1,5 @@
+%span.actions
+  = link_to edit_item_path(item), rel: 'tooltip', data: { 'original-title': 'Edit', 'delay': '{"show":"400"}' } do
+    %span.glyphicon.glyphicon-pencil
+  = link_to item, method: :delete, remote: true, rel: 'tooltip', data: { 'original-title': 'Remove', 'delay': '{"show":"400"}' } do
+    %span.glyphicon.glyphicon-remove

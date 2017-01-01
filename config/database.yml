@@ -1,0 +1,19 @@
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *connection
+  database: treeview_development
+
+test:
+  <<: *connection
+  database: treeview_test
+
+production:
+  <<: *connection
+  database: treeview_production

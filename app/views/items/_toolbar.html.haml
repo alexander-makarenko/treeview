@@ -1,0 +1,6 @@
+.form-group#toolbar
+  = link_to new_item_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    Add
+  = link_to 'Collapse All', '#', class: 'btn btn-default', id: 'collapse-tree'
+  = link_to 'Expand All', '#', class: 'btn btn-default', id: 'expand-tree'

@@ -1,0 +1,7 @@
+= render 'toolbar'
+
+- if @items.any?
+  %ul.tree
+    = render partial: 'item', collection: @items.where(parent_id: nil)
+- else
+  = render 'no_items_message'

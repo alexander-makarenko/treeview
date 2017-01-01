@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "items";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 70px 0 80px;
+}
+
+#logo {
+  font-size: 150%;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  padding-top: 13px;
+  margin-top: 30px;
+}
+
+.debug_dump {
+  margin-top: 10px;
+}
+
+.btn {
+  min-width: 90px;
+  margin-right: 5px;
+}
+
+a:focus {
+  outline: none;
+}
+
+.field_with_errors {
+  @extend .has-error;
+}
+
+.alert:not(.validation-errors) {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 51px;
+  width: 20em;
+  margin-left: -10em;
+  padding: 0.5em 1em;
+  text-align: center;
+  border-top: none;
+  border-radius: 0 0 0.5em 0.5em;
+}

@@ -1,0 +1,47 @@
+:plain
+
+  var $item = $("#item_#{@item.id}");
+  var $item_name = $item.find('.name');
+  var $item_siblings = $item.siblings();
+  var $node = $item.closest('.parent');
+  var $node_toggle = $node.children('span').find('.toggle-icon');
+
+  // highlight the name of the item being removed
+  $item_name.addClass('highlight').end();
+
+  $item.fadeTo(200, .1, function() {
+    // if the item has no siblings, remove the node toggle
+    if ($item_siblings.length == 0) {      
+      $node_toggle.fadeOut(200, function() {
+        $(this).remove();
+      });      
+    }
+    $(this).slideUp(200, function() {
+      // remove the item and, if it had no siblings, the containing element
+      if ($item_siblings.length == 0) {
+        $(this).parent().remove();
+      } else {
+        $(this).remove();
+      }
+      // if no items left and the tree was removed, show a meaningful message
+      if ($('.tree').length == 0) {
+        var msg = "#{escape_javascript(render 'no_items_message')}";
+        $(msg).insertAfter('#toolbar');
+      }
+    });
+  });
+  
+  // remove the existing alerts, if any
+  var $alert = $('.alert');
+  if ($alert.length > 0) {
+    $alert.stop(true).fadeOut(200, function() {
+      $(this).remove();
+    });
+  }
+
+  // show a new alert
+  setTimeout(function() {
+    var flash = "#{escape_javascript(render 'layouts/flash')}";
+    $(flash).insertAfter('header');
+    animateAlerts();
+  }, 200);
