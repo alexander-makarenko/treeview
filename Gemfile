@@ -17,9 +17,9 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
+gem 'faker'
 
-group :development, :test do
-  gem 'faker'
+group :development, :test do  
   gem 'byebug', platform: :mri
 end
 
@@ -28,10 +28,6 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :production do
-  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
