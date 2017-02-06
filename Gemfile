@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.3.0'
-#ruby-gemset=squro
+#ruby-gemset=treeview
 
 gem 'rails', '~> 5.0.1'
 gem 'puma', '~> 3.0'

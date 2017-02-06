@@ -1,6 +1,6 @@
 ## About
 
-This is a Rails 5.0 app that allows working with a tree of string items. The tree functionality is hand-coded, no plugins are used.
+A Rails 5 app for working with a tree of string items. The tree functionality is hand-coded, no dedicated plugins are used.
 
 ## Live Demo
 
